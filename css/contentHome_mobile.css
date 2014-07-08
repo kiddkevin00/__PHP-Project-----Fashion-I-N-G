@@ -1,0 +1,183 @@
+/* GLOBAL STYLES
+ -------------------------------------------------- */
+
+/* Padding below the footer and lighter body text */
+
+/** {
+	border: 1px dashed green;
+}*/
+
+body {
+	background-color: #B2B2B2;
+	color: #5a5a5a;
+}
+
+.row {
+	/*margin-top: 10px;*/
+	/*margin-bottom: 10px;*/
+}
+
+/* CUSTOMIZE THE NAVBAR
+ -------------------------------------------------- */
+
+.navbar-fixed-top {
+	margin-top: 0;
+}
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+/*.navbar-wrapper {
+ position: absolute;
+ top: 0;
+ right: 0;
+ left: 0;
+ z-index: 20;
+ }*/
+
+/* Flip around the padding for proper display in narrow viewports */
+/*.navbar-wrapper .container {
+ padding-right: 0;
+ padding-left: 0;
+ }*/
+
+/*.navbar-wrapper .navbar {
+ padding-right: 15px;
+ padding-left: 15px;
+ }*/
+
+/* CUSTOMIZE THE SLIDE SHOW(CAROUSEL)
+ -------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 300px;
+  margin-bottom: 0px;
+  margin-top: 50px;
+}
+
+.carousel .carousel-inner {
+  background-color: blue; 
+}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+.carousel-caption h1 {
+	font-size: 20px;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 300px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 300px;
+}
+
+/* STICKERS CONTENT
+ -------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.stickers { 
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-top: 5px;
+}
+
+.stickers .row {
+	padding-left: 9px;
+	padding-right: 9px;
+}
+
+.stickers .col-md-4, 
+.stickers .col-md-6,
+.stickers .col-md-12 {
+	padding: 0;
+}
+
+.stickers .col-md-4 img,
+.stickers .col-md-6 img,
+.stickers .col-md-12 img {
+	width: 100%;
+	height: 200px;
+	border: 2px solid;
+}
+
+/* Center align the text within the three columns below the carousel */
+/*.stickers .col-md-4 {
+ margin-bottom: 20px;
+ text-align: center;
+ }*/
+/*.stickers h2 {
+ font-weight: normal;
+ }
+ .stickers .col-lg-4 p {
+ margin-right: 10px;
+ margin-left: 10px;
+ }*/
+
+/* Featurettes
+ ------------------------- */
+
+.featurette-divider {
+	margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+/*.featurette-heading {
+	font-weight: 300;
+	line-height: 1;
+	letter-spacing: -1px;
+}*/
+
+/* RESPONSIVE CSS
+ -------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+	/* Remove the edge padding needed for mobile */
+	.stickers {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	/* Navbar positioning foo */
+	.navbar-fixed-top {
+		margin-top: 0px;
+	}
+	.navbar-fixed-top .container {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	.navbar-fixed-top .navbar {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	/* The navbar becomes detached from the top, so we round the corners */
+	.navbar-fixed-top .navbar {
+		border-radius: 4px;
+	}
+
+	/* Bump up size of carousel content */
+	.carousel-caption h1 {
+		margin-bottom: 20px;
+		font-size: 50px;
+		line-height: 1.4;
+	}
+
+	.featurette-heading {
+		font-size: 50px;
+	}
+}
+
+@media (min-width: 992px) {
+	.featurette-heading {
+		margin-top: 120px;
+	}
+}
