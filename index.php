@@ -46,15 +46,18 @@
 					height : 350,
 					width : 500,
 					buttons : [{
-						text : "Sign up",
+						text : "Subscribe",
 						click : function() {
 							// TODO..
+							var email = $('#email').val();
+							var password = $('#password').val();
+
 							$(this).dialog("close");
 						}
 					}]
 				});
 
-				$("#signin").click(function() {
+				$("#subscribe").click(function() {
 					$("#dialog-login").dialog("open");
 				});
 
@@ -66,7 +69,7 @@
 
 	<body>
 		<!-- Dialog Layout -->
-		<div  id="dialog-login" title="Sign up">
+		<div  id="dialog-login" title="Subscribe">
 			<div style="width:400px; " class="container">
 				<form class="form-signin" role="form" method="Post">
 					<h2 class="form-signin-heading">Thanks for joy us..</h2>
@@ -103,11 +106,53 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">FashionING</a>
-					<a id="signin" class="navbar-brand" href="#">sign up</a>
+					<!-- or <a href="interiorPage.php"> -->
+					<a class="navbar-brand" href="PHPSyntaxReview/interiorPage.php">FashionING</a>
 				</div>
+
 				<div class="navbar-collapse collapse">
-					<form class="navbar-form navbar-right" action="<?php echo $_SERVER['PHP_SELF']; ?>" role="form">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="#">Home</a>
+						</li>
+						<li>
+							<a href="#about">About</a>
+						</li>
+						<li>
+							<a  id="signup" href="signupPage.php">Sign up</a>
+						</li>
+						<li>
+							<a  id="subscribe" href="#">Subscribe</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">Action</a>
+								</li>
+								<li>
+									<a href="#">Another action</a>
+								</li>
+								<li>
+									<a href="#">Something else here</a>
+								</li>
+								<li class="divider"></li>
+								<li class="dropdown-header">
+									Nav header
+								</li>
+								<li>
+									<a href="#">Separated link</a>
+								</li>
+								<li>
+									<a href="#">One more separated link</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<div class="navbar-collapse collapse">
+					<form class="navbar-form navbar-right" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" role="form">
 						<div class="form-group">
 							<input name="email" type="text" placeholder="Email" class="form-control">
 						</div>
@@ -128,10 +173,28 @@
 				<h1>One Step to Fashion..</h1>
 				<p>
 					<?php
-					$email=$_REQUEST['email'];
 					
+
+					function purify_input($data) {
+						$data = trim($data);
+						$data = stripslashes($data);
+						$data = htmlspecialchars($data);
+						return $data;
+					}
+					
+					if ($_SERVER["REQUEST_METHOD"] == "POST") {
+						$name = test_input($_POST["name"]);
+						$email = test_input($_POST["email"]);
+						$website = test_input($_POST["website"]);
+						$comment = test_input($_POST["comment"]);
+						$gender = test_input($_POST["gender"]);
+					}
+
+					$email = $_REQUEST['email'];
+					// (TODO) Hackers can do someth like the following:
+					//$email="<script>alert('hacked')</script>";
 					if ($email) {
-					echo "Welcome back.. " . "<b>$email<b>";
+						echo "Welcome back.. " . "<b>$email<b>";
 					} else {
 						echo "Hope you enjoy the first time in our website..";
 					}
