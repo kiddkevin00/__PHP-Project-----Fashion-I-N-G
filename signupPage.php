@@ -1,3 +1,25 @@
+<?php
+function purify_input($data) {
+	$data = trim($data);
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	return $data;
+}
+
+/*
+ * If the REQUEST_METHOD is POST, then the form has been submitted 
+ * and it should be validated. If it has not been submitted, skip 
+ * the validation and display a blank form.
+ */
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	$name = purify_input($_POST["name"]);
+	$email = purify_input($_POST["email"]);
+	$website = purify_input($_POST["website"]);
+	$comment = purify_input($_POST["comment"]);
+	$gender = purify_input($_POST["gender"]);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -42,19 +64,23 @@
 
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form-signin" role="form">
 				<h2 class="form-signin-heading">Welcome..</h2>
-				Name: <input name="name" type="email" class="form-control" placeholder="Vivi Pro" required autofocus>
-				E-mail: <input type="text" name="email" class="form-control" placeholder="example@ex.com" >
-				Website: <input type="text" name="website" class="form-control"  placeholder="linkedin.com/profile/view?id=0123&trk=abc" >
-				Comment: <textarea name="comment" class="form-control" rows="5" cols="40" placeholder="I'd like to have more feeature like.."></textarea>
+				Name:
+				<input name="name" type="email" class="form-control" placeholder="Vivi Pro" required autofocus>
+				E-mail:
+				<input type="text" name="email" class="form-control" placeholder="example@ex.com" >
+				Website:
+				<input type="text" name="website" class="form-control"  placeholder="linkedin.com/profile/view?id=0123&trk=abc" >
+				Comment: 				<textarea name="comment" class="form-control" rows="5" cols="40" placeholder="I'd like to have more feeature like.."></textarea>
 				<br>
 				Gender:
 				<input type="radio" name="gender" value="female">
 				Female
 				<input type="radio" name="gender" value="male">
-				Male 
+				Male
 				<br>
 				<br>
-				Password: <input type="password" class="form-control" placeholder="Password" required>
+				Password:
+				<input type="password" class="form-control" placeholder="Password" required>
 				<label class="checkbox">
 					<input type="checkbox" value="remember-me">
 					Remember me </label>
@@ -65,8 +91,6 @@
 
 		</div>
 		<!-- /container -->
-
-		
 
 	</body>
 </html>

@@ -149,9 +149,9 @@
 							</ul>
 						</li>
 					</ul>
-				</div>
+					<!-- </div> -->
 
-				<div class="navbar-collapse collapse">
+					<!-- <div class="navbar-collapse collapse"> -->
 					<form class="navbar-form navbar-right" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" role="form">
 						<div class="form-group">
 							<input name="email" type="text" placeholder="Email" class="form-control">
@@ -163,7 +163,8 @@
 							Sign in
 						</button>
 					</form>
-				</div><!--/.navbar-collapse -->
+				</div>
+				<!-- </div> --><!--/.navbar-collapse -->
 			</div>
 		</div>
 
@@ -173,7 +174,6 @@
 				<h1>One Step to Fashion..</h1>
 				<p>
 					<?php
-					
 
 					function purify_input($data) {
 						$data = trim($data);
@@ -181,7 +181,7 @@
 						$data = htmlspecialchars($data);
 						return $data;
 					}
-					
+
 					if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						$name = test_input($_POST["name"]);
 						$email = test_input($_POST["email"]);
@@ -210,47 +210,39 @@
 			<!-- Example row of columns -->
 			<div class="row">
 				<div class="col-md-3">
-					<h2>Cute</h2>
+					<h3>Uptown Style</h3>
 					<p>
-						Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-						commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-						Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+						some intro here..
 					</p>
 					<p>
-						<a class="btn btn-default" href="#" role="button">View details &raquo;</a>
+						<a class="btn btn-default" href="interiorPage.php" role="button">View details &raquo;</a>
 					</p>
 				</div>
 				<div class="col-md-3">
-					<h2>Sexy</h2>
+					<h3>Downtown Style</h3>
 					<p>
-						Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-						commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-						Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+						some intro here..
 					</p>
 					<p>
-						<a class="btn btn-default" href="#" role="button">View details &raquo;</a>
+						<a class="btn btn-default" href="interiorPage.php" role="button">View details &raquo;</a>
 					</p>
 				</div>
 				<div class="col-md-3">
-					<h2>Heading</h2>
+					<h3>Girls-Night-out Style</h3>
 					<p>
-						Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-						commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-						Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+						some intro here..
 					</p>
 					<p>
-						<a class="btn btn-default" href="#" role="button">View details &raquo;</a>
+						<a class="btn btn-default" href="interiorPage.php" role="button">View details &raquo;</a>
 					</p>
 				</div>
 				<div class="col-md-3">
-					<h2>Heading</h2>
+					<h3>still figuring out..</h3>
 					<p>
-						Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-						Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus
-						commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+						some intro here..
 					</p>
 					<p>
-						<a class="btn btn-default" href="#" role="button">View details &raquo;</a>
+						<a class="btn btn-default" href="interiorPage.php" role="button">View details &raquo;</a>
 					</p>
 				</div>
 			</div>
