@@ -116,7 +116,7 @@
 							<a href="#">Home</a>
 						</li>
 						<li>
-							<a href="#about">About</a>
+							<a href="aboutusPage.php">About</a>
 						</li>
 						<li>
 							<a  id="signup" href="signupPage.php">Sign up</a>
