@@ -183,17 +183,12 @@
 						return $data;
 					}
 
-					if ($_SERVER["REQUEST_METHOD"] == "POST") {
-						$name = test_input($_POST["name"]);
-						$email = test_input($_POST["email"]);
-						$website = test_input($_POST["website"]);
-						$comment = test_input($_POST["comment"]);
-						$gender = test_input($_POST["gender"]);
+					if ($_SERVER["REQUEST_METHOD"] == "GET") {
+						$email = purify_input($_REQUEST["email"]);
 					}
-
-					$email = $_REQUEST['email'];
-					// (TODO) Hackers can do someth like the following:
-					//$email="<script>alert('hacked')</script>";
+					
+					// Prevent Hackers do someth like the following:
+					//  $email="<script>alert('hacked')</script>";
 					if ($email) {
 						echo "Welcome back.. " . "<b>$email<b>";
 					} else {
