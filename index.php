@@ -106,8 +106,8 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<!-- or <a href="./interiorPage.php"> -->
-					<!-- or <a href="interiorPage.php"> -->
+					<!-- ** or <a href="./interiorPage.php"> -->
+					<!-- ** or <a href="interiorPage.php"> -->
 					<a class="navbar-brand" href="/PHPSyntaxReview/interiorPage.php ">FashionING</a>
 				</div>
 

@@ -37,7 +37,15 @@
 		<!-- JQuery-UI core JavaScript -->
 		<script src="./js/jquery/jquery-ui.min.js"></script>
 	</head>
+	
 	<?php
+
+	// for debugging; display error or warning on the same page
+	// also use var_dump($variable) to debug
+	ini_set('display_errors', 'On');
+	error_reporting(E_ALL | E_STRICT);
+	echo "hello!!";
+
 	function purify_input($data) {
 		$data = trim($data);
 		$data = stripslashes($data);
@@ -46,7 +54,7 @@
 	}
 
 	// define variables and set to empty values
-	$nameErr = $emailErr = $genderErr = $websiteErr = "";
+	$nameErr = $emailErr = $genderErr = $websiteErr = $passwordErr = "";
 	$name = $email = $gender = $comment = $website = "";
 	/*
 	 * If the REQUEST_METHOD is POST, then the form has been submitted
@@ -101,7 +109,8 @@
 			$password = purify_input($_POST["password"]);
 		}
 	}
-?>
+	?>
+	
 	<body>
 		<div class="container">
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form-signin" role="form">
@@ -137,9 +146,6 @@
 					Sign in
 				</button>
 			</form>
-
-		</div>
-		<!-- /container -->
-
+		</div><!-- /container -->
 	</body>
 </html>
