@@ -44,7 +44,6 @@
 	// also use var_dump($variable) to debug
 	ini_set('display_errors', 'On');
 	error_reporting(E_ALL | E_STRICT);
-	echo "hello!!";
 
 	function purify_input($data) {
 		$data = trim($data);

@@ -60,7 +60,6 @@
 				$("#subscribe").click(function() {
 					$("#dialog-login").dialog("open");
 				});
-
 			});
 
 		</script>
@@ -176,24 +175,24 @@
 				<p>
 					<?php
 
-					function purify_input($data) {
-						$data = trim($data);
-						$data = stripslashes($data);
-						$data = htmlspecialchars($data);
-						return $data;
-					}
+                    function purify_input($data) {
+                        $data = trim($data);
+                        $data = stripslashes($data);
+                        $data = htmlspecialchars($data);
+                        return $data;
+                    }
 
-					if ($_SERVER["REQUEST_METHOD"] == "GET") {
-						$email = purify_input($_REQUEST["email"]);
-					}
-					
-					// Prevent Hackers do someth like the following:
-					//  $email="<script>alert('hacked')</script>";
-					if ($email) {
-						echo "Welcome back.. " . "<b>$email<b>";
-					} else {
-						echo "Hope you enjoy the first time in our website..";
-					}
+                    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                        $email = purify_input($_REQUEST["email"]);
+                    }
+
+                    // Prevent Hackers do someth like the following:
+                    //  $email="<script>alert('hacked')</script>";
+                    if ($email) {
+                        echo "Welcome back.. " . "<b>$email<b>";
+                    } else {
+                        echo "Hope you enjoy the first time in our website..";
+                    }
 					?>
 				</p>
 				<p>
@@ -252,5 +251,8 @@
 			</footer>
 		</div>
 		<!-- /container -->
+		<?php
+		echo "hello";
+		?>
 	</body>
 </html>
